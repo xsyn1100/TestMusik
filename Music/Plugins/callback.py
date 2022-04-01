@@ -245,8 +245,8 @@ async def skipvc(_,CallbackQuery):
                 ctitle = await CHAT_TITLE(ctitle)
                 f2 = open(f'search/{afk}id.txt', 'r')        
                 userid =(f2.read())
-                thumb = await gen_thumb(thumbnail, title, userid, theme, ctitle)
-                user_id = userid
+                status = "PLAYING NOW"
+                thumb = await gen_thumb(videoid, status)                user_id = userid
                 buttons = play_markup(videoid, user_id)
                 await mystic.delete()
                 semx = await app.get_users(userid)
@@ -438,8 +438,7 @@ Personal Playlist Playing."""
                     theme = random.choice(themes)
                     ctitle = CallbackQuery.message.chat.title
                     ctitle = await CHAT_TITLE(ctitle)
-                    thumb = await gen_thumb(thumbnail, title, userid, theme, ctitle)  
-                    buttons = play_markup(videoid, user_id)
+                    thumb = await gen_thumb(videoid, status)                    buttons = play_markup(videoid, user_id)
                     m = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),    
@@ -584,8 +583,7 @@ Group Playlist Playing."""
                     theme = random.choice(themes)
                     ctitle = CallbackQuery.message.chat.title
                     ctitle = await CHAT_TITLE(ctitle)
-                    thumb = await gen_thumb(thumbnail, title, userid, theme, ctitle)
-                    buttons = play_markup(videoid, user_id)
+                    thumb = await gen_thumb(videoid, status)                    buttons = play_markup(videoid, user_id)
                     m = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),    
