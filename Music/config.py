@@ -22,3 +22,8 @@ UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/muhammadrizky16/KyyMusic")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
+
+YOUTUBE_IMG_URL = getenv(
+    "YOUTUBE_IMG_URL",
+    "assets/Youtube.jpeg",
+)
