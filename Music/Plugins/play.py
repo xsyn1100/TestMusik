@@ -197,7 +197,8 @@ async def play(_, message: Message):
         ctitle = message.chat.title
         ctitle = await CHAT_TITLE(ctitle)
         userid = message.from_user.id
-        thumb = gen_thumb(videoid, status)
+        status = "PLAYING NOW"
+        thumb = await gen_thumb(videoid, status)
         def my_hook(d): 
             if d['status'] == 'downloading':
                 percentage = d['_percent_str']
@@ -445,7 +446,8 @@ async def startyuplay(_,CallbackQuery):
     theme = random.choice(themes)
     ctitle = CallbackQuery.message.chat.title
     ctitle = await CHAT_TITLE(ctitle)
-    thumb = gen_thumb(videoid, status)
+    status = "QUEUED TRACK"
+    thumb = await gen_thumb(videoid, status)
     await mystic.delete()
     if await is_active_chat(chat_id):
         position = await put(chat_id, file=file)
