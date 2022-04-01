@@ -59,6 +59,11 @@
             "required": false,
             "value": "Isi Sendiri"
         },
+        "MUSIC_BOT_NAME": {
+            "description": "A name for your Music Bot. Please don't use ascii characters",
+            "required": true,
+            "value": "Syn Robot"
+        },
         "MONGO_DB_URI": {
             "description": "fill with the mongodb url get from mongodb.cloud.com (don't use mine below !)",
             "required": false,
